@@ -8,7 +8,7 @@
     <string name="rules_vertical">Ряд по вертикали</string>
     <string name="rules_horizontal">Ряд по горизонтали</string>
     <string name="rules_diagonal">Ряд по диагонали</string>
-    <string name="settings_ave">Сохранить</string>
+    <string name="settings_save">Сохранить</string>
     <string name="popup_close">ОК</string>
     <string name="popup_title">Меню</string>
     <string name="dialog_continue_game">Продолжить игру</string>
