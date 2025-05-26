@@ -1,0 +1,27 @@
+<resources>
+    <string name="title_new_game">Новая игра</string>
+    <string name="title_continue_game">Продолжить игру</string>
+    <string name="title_settings">Настройки</string>
+    <string name="settings_rules">Правила игры</string>
+    <string name="settings_sound">Звук</string>
+    <string name="settings_difficulty">Сложность</string>
+    <string name="rules_vertical">Ряд по вертикали</string>
+    <string name="rules_horizontal">Ряд по горизонтали</string>
+    <string name="rules_diagonal">Ряд по диагонали</string>
+    <string name="settings_to_back">Вернуться</string>
+    <string name="popup_close">ОК</string>
+    <string name="popup_title">Меню</string>
+    <string name="dialog_continue_game">Продолжить игру</string>
+    <string name="dialog_settings">Настройки</string>
+    <string name="dialog_exit">Сохранить и выйти</string>
+    <string name="app_name">Мои Крестики-Нолики</string>
+
+    <string-array name="difficulty_levels">
+        <item>ЛЕГКО</item>
+        <item>НОРМАЛЬНО</item>
+        <item>СЛОЖНО</item>
+    </string-array>
+    <string name="dialog_win">Вы выиграли!</string>
+    <string name="dialog_lose">Вы проиграли!</string>
+    <string name="dialog_draw">Ничья!</string>
+</resources>
