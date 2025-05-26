@@ -95,7 +95,7 @@ class GamePreferences : AppCompatActivity() {
     }
 
     private fun setupNavigation() {
-        ui.backButton.setOnClickListener {
+        ui.preferencesSaveButton.setOnClickListener {
             setResult(RESULT_OK)
             finish()
         }

@@ -17,6 +17,7 @@ class GameSession : AppCompatActivity() {
     private lateinit var board: Array<Array<String>>
     private lateinit var bgMusic: MediaPlayer
     private var gameActive = true
+    private var gameRestored = false
 
     private val settingsResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode == RESULT_OK) {
@@ -47,6 +48,7 @@ class GameSession : AppCompatActivity() {
 
         if (savedState != null && savedTime != 0L && savedState.isNotEmpty()) {
             restoreGame(savedTime, savedState)
+            gameRestored = true
         } else {
             initializeBoard()
         }
@@ -72,9 +74,9 @@ class GameSession : AppCompatActivity() {
     private fun setupAudio() {
         bgMusic = MediaPlayer.create(this, R.raw.game_music).apply {
             isLooping = true
-            setupVolume()
-            start()
         }
+        setupVolume()
+        bgMusic.start()
         ui.gameTimer.base = SystemClock.elapsedRealtime()
         ui.gameTimer.start()
     }
@@ -339,6 +341,8 @@ class GameSession : AppCompatActivity() {
         gameActive = false
         ui.gameTimer.stop()
 
+        if (gameRestored) clearSavedGame()
+
         AlertDialog.Builder(this)
             .setView(when (result) {
                 GameResult.PLAYER_WIN -> R.layout.win_dialog
@@ -363,6 +367,14 @@ class GameSession : AppCompatActivity() {
         getSharedPreferences("game_data", MODE_PRIVATE).edit {
             putLong("last_game_time", time)
             putString("last_game_state", gameState)
+        }
+    }
+
+    private fun clearSavedGame() {
+        getSharedPreferences("game_data", MODE_PRIVATE).edit {
+            putLong("last_game_time", 0)
+            putString("last_game_state", "")
+            apply()
         }
     }
 

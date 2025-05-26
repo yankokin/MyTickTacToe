@@ -9,7 +9,7 @@
     <string name="rules_vertical">Vertical row</string>
     <string name="rules_horizontal">Horizontal row</string>
     <string name="rules_diagonal">Diagonal row</string>
-    <string name="settings_to_back">To back</string>
+    <string name="settings_ave">Save</string>
     <string name="popup_close">OK</string>
     <string name="popup_title">Menu</string>
     <string name="dialog_continue_game">Continue game</string>
